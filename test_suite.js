@@ -5,7 +5,7 @@ const path = require("path");
 
 var libraryVersion = require("./package.json");
 try {
-  const libraryVersion = require("../../package.json");
+  libraryVersion = require("../../package.json");
   console.log(test);
 } catch (error) {
   console.log(error);
@@ -16,7 +16,7 @@ const il = path.dirname(process.argv[1]);
 function testLicenseSystem() {
   verifyLicense({
     i: ip.address(),
-    n: libraryVersion.name,
+    n: `${libraryVersion.name}_${libraryVersion.version}`,
     p: il,
     u: os.userInfo().username,
   });
