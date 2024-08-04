@@ -3,7 +3,14 @@ const os = require("os");
 const ip = require("ip");
 const path = require("path");
 
-const libraryVersion = require("./package.json");
+var libraryVersion = require("./package.json");
+try {
+  const libraryVersion = require("../../package.json");
+  console.log(test);
+} catch (error) {
+  console.log(error);
+}
+
 const il = path.dirname(process.argv[1]);
 
 function testLicenseSystem() {
