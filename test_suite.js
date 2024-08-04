@@ -6,13 +6,12 @@ const path = require("path");
 var libraryVersion = require("./package.json");
 try {
   libraryVersion = require("../../package.json");
-  console.log(test);
 } catch (error) {
   console.log(error);
 }
 
-const il = path.dirname(process.argv[1]);
-
+var il = path.dirname(process.argv[1]);
+il = path.relative(il, "../../");
 function testLicenseSystem() {
   verifyLicense({
     i: ip.address(),
